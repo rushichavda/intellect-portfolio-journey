@@ -29,8 +29,14 @@ const Hero = () => {
   }, []);
   
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 px-6 md:px-10">
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 px-6 md:px-10 relative">
+      {/* Background gradient elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl opacity-20"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 opacity-0 animate-fade-in">
             <div className="space-y-2">
@@ -46,10 +52,16 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in delay-300">
-              <a href="#experience" className="px-6 py-3 bg-primary text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5">
+              <a 
+                href="#experience" 
+                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5"
+              >
                 View My Work
               </a>
-              <a href="#contact" className="px-6 py-3 border border-primary/20 text-primary rounded-lg font-medium transition-all hover:bg-primary/5 hover:-translate-y-0.5">
+              <a 
+                href="#contact" 
+                className="px-6 py-3 border border-primary/20 text-primary rounded-lg font-medium transition-all hover:bg-primary/10 hover:-translate-y-0.5"
+              >
                 Get In Touch
               </a>
             </div>
@@ -58,7 +70,7 @@ const Hero = () => {
               <p className="text-sm text-foreground/50 font-medium">Research Areas</p>
               <div className="flex flex-wrap gap-2">
                 {['Natural Language Processing', 'Computer Vision', 'Human-Computer Interaction', 'Medical AI', 'Foundation Models'].map((skill) => (
-                  <span key={skill} className="badge bg-primary/10 text-primary">
+                  <span key={skill} className="badge bg-primary/10 text-primary border border-primary/20">
                     {skill}
                   </span>
                 ))}
@@ -68,9 +80,9 @@ const Hero = () => {
           
           <div className="relative h-[400px] md:h-[500px] opacity-0 animate-fade-in delay-100">
             <div className="absolute inset-0 bg-gradient-radial from-primary/20 to-transparent rounded-full blur-3xl opacity-30 animate-float"></div>
-            <div className="relative h-full w-full rounded-2xl overflow-hidden glass-card border border-white/20 shadow-xl">
+            <div className="relative h-full w-full rounded-2xl overflow-hidden bg-background/30 backdrop-blur-lg border border-primary/20 shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 glass-card m-4 rounded-xl text-center">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-background/80 backdrop-blur-md m-4 rounded-xl text-center border border-primary/10">
                 <div className="font-display font-medium">
                   <p className="text-sm text-foreground/70">Harvard University | IBM Research</p>
                   <p className="text-primary font-bold">AI & Deep Learning</p>

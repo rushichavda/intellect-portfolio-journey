@@ -32,7 +32,9 @@ const NavBar = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-10",
-        scrolled ? "py-3 glass shadow-sm" : "py-5 bg-transparent"
+        scrolled 
+          ? "py-3 bg-background/80 backdrop-blur-lg border-b border-border/20 shadow-sm" 
+          : "py-5 bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -81,7 +83,7 @@ const NavBar = () => {
       
       {/* Mobile Navigation */}
       <div className={cn(
-        "md:hidden fixed inset-x-0 glass transition-all duration-300 ease-in-out overflow-hidden",
+        "md:hidden fixed inset-x-0 bg-background/90 backdrop-blur-lg border-b border-border/20 transition-all duration-300 ease-in-out overflow-hidden",
         mobileMenuOpen ? "top-16 opacity-100 h-auto py-5" : "top-16 opacity-0 h-0 py-0"
       )}>
         <nav className="flex flex-col space-y-4 px-6">

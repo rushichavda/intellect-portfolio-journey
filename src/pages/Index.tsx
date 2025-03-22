@@ -33,7 +33,10 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(#3a3f4a_1px,transparent_1px)] bg-[length:20px_20px] opacity-[0.15] pointer-events-none"></div>
+      
       <NavBar />
       <Hero />
       <Experience />
